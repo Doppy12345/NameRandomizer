@@ -39,8 +39,8 @@ client.on(Events.InteractionCreate, async interaction => {
 
 
 client.on(Events.MessageCreate, async (message) => {
-    console.log(client.stalking)
-    console.log("new Message")
+
+    //console.log("new Message")
     try {
         for (let victim in client.stalking){
             if (message.mentions.has(client.stalking[victim].member)){
