@@ -1,11 +1,12 @@
 import { REST, Routes } from 'discord.js';
-import { clientId, Token } from './config.js';
+import dotenv from "dotenv"
 import stalk from "./commands/stalk.js"
+dotenv.config()
 
 const commands = [stalk.data.toJSON()];
 
 // Construct and prepare an instance of the REST module
-const rest = new REST({ version: '10' }).setToken(Token);
+const rest = new REST({ version: '10' }).setToken(process.env.TOKEN);
 
 // and deploy your commands!
 (async () => {
@@ -14,7 +15,7 @@ const rest = new REST({ version: '10' }).setToken(Token);
 
 		// The put method is used to fully refresh all commands in the guild with the current set
 		const data = await rest.put(
-			Routes.applicationCommands(clientId),
+			Routes.applicationCommands(process.env.CLIENT_ID),
 			{ body: commands },
 		);
 

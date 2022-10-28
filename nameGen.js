@@ -1,12 +1,14 @@
 import got from "got"
-import { gpt3Token } from "./config.js"
+import dotenv from "dotenv"
 
+
+dotenv.config()
 const url = "https://api.openai.com/v1/completions"
 
 const NAME_TYPES = ["", "Italian", "German", "British", "American", "Spanish", "Greek"]
 
 const randomPickNameType = () => {
-    randomIndex = Math.floor(Math.random() * NAME_TYPES.length)
+    const randomIndex = Math.floor(Math.random() * NAME_TYPES.length)
     return NAME_TYPES[randomIndex]
 }
 
@@ -22,7 +24,7 @@ export const genName = async (startingLetter, gender) => {
     }
 
     const headers = {
-        "Authorization": `Bearer ${gpt3Token}`
+        "Authorization": `Bearer ${process.env.GPT3_TOKEN}`
     }
 
     try {

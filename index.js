@@ -1,8 +1,9 @@
 import {Client, Events, GatewayIntentBits} from "discord.js"
 import stalk from "./commands/stalk.js"
-import {Token} from "./config.js"
+import dotenv from "dotenv"
 import { genName } from "./nameGen.js";
 
+dotenv.config()
 const client = new Client({intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMembers, GatewayIntentBits.GuildMessages, GatewayIntentBits.Guilds]})
 
 
@@ -54,4 +55,4 @@ client.on(Events.MessageCreate, async (message) => {
 
 })
 
-client.login(Token)
+client.login(process.env.TOKEN)
