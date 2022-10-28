@@ -1,0 +1,24 @@
+{
+  "dependencies": {
+    "discord.js": "^14.6.0",
+    "got": "^12.5.2"
+  },
+  "name": "namerandomizer",
+  "version": "1.0.0",
+  "description": "Bot that randomizes the nickname of a pinged user",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Doppy12345/NameRandomizer.git"
+  },
+  "author": "Daniel Passos",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Doppy12345/NameRandomizer/issues"
+  },
+  "homepage": "https://github.com/Doppy12345/NameRandomizer#readme"
+}
